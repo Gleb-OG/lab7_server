@@ -4,54 +4,51 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14e2157b-7e1c-498a-94b6-7f3aadcb533b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab6_server.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab/Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab/commands/Clear.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab/commands/Command.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab/commands/ExecuteScript.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab/commands/Exit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab/commands/FilterByAnnualTurnover.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab/commands/FilterGreaterThanOfficialAddress.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab/commands/Help.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab/commands/Info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab/commands/InsertElement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab/commands/RemoveGreater.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab/commands/RemoveKey.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab/commands/RemoveLowerKey.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab/commands/ReplaceIfLower.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab/commands/Save.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab/commands/Show.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab/commands/SumOfAnnualTurnover.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab/commands/UpdateID.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab/exceptions/FileAccessException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab/exceptions/InvalidDataException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab/exceptions/NoSuchCommandException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab/exceptions/WrongArgsNumber.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab/interfaces/CommandInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab/invoker/Invoker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab/managers/CollectionManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab/managers/ConsoleManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab/managers/KeyManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab/managers/RunManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab/managers/ScriptManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab/model/Address.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab/model/Coordinates.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab/model/Location.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab/model/Organization.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab/model/OrganizationType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab/network/Request.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab/network/Response.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab/utils/CSVProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab/utils/IDGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab/utils/InteractiveParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab/utils/Validator.java" afterDir="false" />
+    <list default="true" id="14e2157b-7e1c-498a-94b6-7f3aadcb533b" name="Changes" comment="-such a mess...&#10;-only started">
+      <change afterPath="$PROJECT_DIR$/src/main/Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab6_server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/lab6_server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab/Server.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab/commands/Clear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/Clear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab/commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab/commands/ExecuteScript.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/ExecuteScript.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab/commands/Exit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/Exit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab/commands/FilterByAnnualTurnover.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/FilterByAnnualTurnover.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab/commands/FilterGreaterThanOfficialAddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/FilterGreaterThanOfficialAddress.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab/commands/Help.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/Help.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab/commands/Info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/Info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab/commands/InsertElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/InsertElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab/commands/RemoveGreater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/RemoveGreater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab/commands/RemoveKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/RemoveKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab/commands/RemoveLowerKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/RemoveLowerKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab/commands/ReplaceIfLower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/ReplaceIfLower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab/commands/Save.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/Save.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab/commands/Show.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/Show.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab/commands/SumOfAnnualTurnover.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/SumOfAnnualTurnover.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab/commands/UpdateID.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/UpdateID.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab/exceptions/FileAccessException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/exceptions/FileAccessException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab/exceptions/InvalidDataException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/exceptions/InvalidDataException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab/exceptions/NoSuchCommandException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/exceptions/NoSuchCommandException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab/exceptions/WrongArgsNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/exceptions/WrongArgsNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab/interfaces/CommandInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/interfaces/CommandInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab/invoker/Invoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/invoker/Invoker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab/managers/CollectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/managers/CollectionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab/managers/ConsoleManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/managers/ConsoleManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab/managers/KeyManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/managers/KeyManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab/managers/RunManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/managers/RunManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab/managers/ScriptManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/managers/ScriptManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab/model/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/model/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab/model/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/model/Coordinates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab/model/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/model/Location.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab/model/Organization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/model/Organization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab/model/OrganizationType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/model/OrganizationType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab/network/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/network/Request.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab/network/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/network/Response.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab/utils/CSVProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/utils/CSVProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab/utils/IDGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/utils/IDGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab/utils/InteractiveParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/utils/InteractiveParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab/utils/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/utils/Validator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,12 +88,20 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Server.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Глеб/IdeaProjects/lab6_server/src/lab",
-    "onboarding.tips.debug.path": "C:/Users/Глеб/IdeaProjects/lab6_server/src/Main.java"
+    "onboarding.tips.debug.path": "C:/Users/Глеб/IdeaProjects/lab6_server/src/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -120,6 +125,19 @@
       <option name="presentableId" value="Default" />
       <updated>1750091834451</updated>
     </task>
+    <task id="LOCAL-00001" summary="-such a mess...&#10;-only started">
+      <option name="closed" value="true" />
+      <created>1750126742779</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1750126742779</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="-such a mess...&#10;-only started" />
+    <option name="LAST_COMMIT_MESSAGE" value="-such a mess...&#10;-only started" />
   </component>
 </project>
