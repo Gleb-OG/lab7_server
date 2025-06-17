@@ -1,6 +1,5 @@
 package main.commands;
 
-import main.Server;
 import main.exceptions.InvalidDataException;
 import main.network.Request;
 import main.utils.Validator;
@@ -16,46 +15,49 @@ public class FilterByAnnualTurnover extends Command {
     }
 
     @Override
-    public boolean check(String[] args) {
-        return args[0].matches("^\\d+$");
+    public boolean check(Request request) {
+        return request.getCommandArg().matches("^\\d+$");
     }
 
     @Override
     public String execute(Request request) throws InvalidDataException, IOException {
         try {
-            String sizeOfAnnualTurnover = Server.console.getToken(1);
+            String str = "";
+            String sizeOfAnnualTurnover = request.getCommandArg();
             long annualTurnover = Validator.parseAnnualTurnover(sizeOfAnnualTurnover);
 
             int count = 0;
             for (int key : collectionManager.getCollection().keySet()) {
                 if (collectionManager.getCollection().get(key).getAnnualTurnover() == annualTurnover) {
-                    System.out.println("-------Organization-------" + "\nkey = " + key + "\n" +
+                    str += ("-------Organization-------" + "\nkey = " + key + "\n" +
                             collectionManager.getCollection().get(key));
                     count++;
                 }
             }
             if (count == 0 || collectionManager.getCollection().values().isEmpty()) {
                 if (count == 0 && !collectionManager.getCollection().values().isEmpty()) {
-                    System.out.println("В коллекции отсутствуют организации, годовой оборот которых равен " + sizeOfAnnualTurnover + ".");
+                    return ("В коллекции отсутствуют организации, годовой оборот которых равен " + sizeOfAnnualTurnover + ".");
                 } else {
-                    System.out.println("Коллекция пуста.");
+                    return ("Коллекция пуста.");
                 }
             } else {
-                System.out.println("Все организации, годовой оборот которых равен " + sizeOfAnnualTurnover + ".");
+                return str + ("\nВсе организации, годовой оборот которых равен " + sizeOfAnnualTurnover + ".");
             }
         } catch (InvalidDataException e) {
             System.out.println(e.getMessage());
+            return e.getMessage();
         }
     }
 
     @Override
     public String execute(String[] args) throws InvalidDataException {
+        String str = "";
         long annualTurnover = Long.parseLong(args[0]);
         int count = 0;
 
         for (int key : collectionManager.getCollection().keySet()) {
             if (collectionManager.getCollection().get(key).getAnnualTurnover() == annualTurnover) {
-                System.out.println("-------Organization-------" + "\nkey = " + key + "\n" +
+                str += ("-------Organization-------" + "\nkey = " + key + "\n" +
                         collectionManager.getCollection().get(key));
                 count++;
             }
@@ -63,12 +65,12 @@ public class FilterByAnnualTurnover extends Command {
 
         if (count == 0 || collectionManager.getCollection().values().isEmpty()) {
             if (count == 0 && !collectionManager.getCollection().values().isEmpty()) {
-                System.out.println("В коллекции отсутствуют организации, годовой оборот которых равен " + annualTurnover + ".");
+                return ("В коллекции отсутствуют организации, годовой оборот которых равен " + annualTurnover + ".");
             } else {
-                System.out.println("Коллекция пуста.");
+                return ("Коллекция пуста.");
             }
         } else {
-            System.out.println("Все организации, годовой оборот которых равен " + annualTurnover + ".");
+            return str + ("\nВсе организации, годовой оборот которых равен " + annualTurnover + ".");
         }
     }
 }

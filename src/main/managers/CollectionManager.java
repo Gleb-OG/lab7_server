@@ -2,7 +2,6 @@ package main.managers;
 import main.Server;
 import main.model.Organization;
 import main.exceptions.InvalidDataException;
-import main.utils.InteractiveParser;
 import java.time.LocalDate;
 import java.util.*;
 
@@ -26,12 +25,11 @@ public class CollectionManager {
         this.collection = newcollection;
     }
 
-    public void addOrganization(int key, Organization organization) {
+    public void addOrganization(int key, Organization organization) throws InvalidDataException {
         try {
             KeyManager.registerKey(key);
         } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
-            return;
+            throw new InvalidDataException(e.getMessage());
         }
         collection.put(key, organization);
     }
@@ -40,15 +38,15 @@ public class CollectionManager {
         return collection;
     }
 
-    public Organization getOrganizationByKey(int key) {
+    public Organization getOrganizationByKey(int key) throws InvalidDataException {
         if (collection.containsKey(key)) {
             return collection.get(key);
         }
-        if (!Server.scriptMode) System.out.println("Элемента с таким ключом не обнаружено.");
+        if (!Server.scriptMode) throw new InvalidDataException("Элемента с таким ключом не обнаружено.");
         return null;
     }
 
-    public void removeOrganizationByKey(int key) {
+    public void removeOrganizationByKey(int key) throws InvalidDataException {
         Organization organization = getOrganizationByKey(key);
         if (organization != null) {
             collection.remove(key);
@@ -56,24 +54,23 @@ public class CollectionManager {
         }
     }
 
-    public void updateKey(int key) {
-        InteractiveParser parser = new InteractiveParser();
+    public void updateKey(int key, Organization organization) throws InvalidDataException {
         try {
             Organization oldOrganization = getOrganizationByKey(key);
             if (oldOrganization != null) {
                 collection.remove(key);
-                Organization newOrganization = parser.parseOrganization();
+                Organization newOrganization = organization;
                 collection.put(key, newOrganization);
             }
         } catch (IndexOutOfBoundsException e) {
-            System.out.println("Введите натуральное число.");
+            throw new InvalidDataException("Введите натуральное число.");
         } catch (InvalidDataException e) {
-            System.out.println(e.getMessage());
+            throw new InvalidDataException (e.getMessage());
         }
     }
 
-    public void info() {
-        System.out.println("Тип коллекции: TreeMap, \n" +
+    public String info() {
+        return ("Тип коллекции: TreeMap, \n" +
                 "Дата создания: " + initializationDate + ",\n" +
                 "Количество элементов: " + collection.size());
     }

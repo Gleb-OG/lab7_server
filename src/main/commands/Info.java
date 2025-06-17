@@ -13,6 +13,6 @@ public class Info extends Command {
 
     @Override
     public String execute(Request request) {
-        collectionManager.info();
+        return collectionManager.info();
     }
 }

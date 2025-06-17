@@ -24,16 +24,16 @@ public class UpdateID extends Command {
     }
 
     @Override
-    public boolean check(String[] args) {
-        if (!args[0].matches("^\\d+$")) return false;
-        int id = Integer.parseInt(args[0]);
+    public boolean check(Request request) {
+        if (!request.getCommandArg().matches("^\\d+$")) return false;
+        int id = Integer.parseInt(request.getCommandArg());
         return IDGenerator.checkIdExisting(id);
     }
 
     @Override
     public String execute(Request request) {
         try {
-            String updatingID = Server.console.getToken(1);
+            String updatingID = request.getCommandArg();
             if (!updatingID.matches("^\\d+$")) {
                 throw new InvalidDataException("id может быть только натуральным числом.");
             }
@@ -44,14 +44,13 @@ public class UpdateID extends Command {
             for (int k : collection.keySet()) if (collection.get(k).getID() == id) key = k;
 
             if (key == 0) {
-                System.out.println("В коллекции отсутствует элемент с id " + id + ".");
-                return;
+                return ("В коллекции отсутствует элемент с id " + id + ".");
             }
 
-            collectionManager.updateKey(key);
-            System.out.println("Элемент c id " + id + " успешно обновлен.");
-        } catch (InvalidDataException e) {
-            System.out.println(e.getMessage());
+            collectionManager.updateKey(key, (Organization) request.getCommandObjArg());
+            return ("Элемент c id " + id + " успешно обновлен.");
+        } catch (Exception e) {
+            return e.getMessage();
         }
     }
 
@@ -63,13 +62,12 @@ public class UpdateID extends Command {
         int key = 0;
         for (int k : collection.keySet()) if (collection.get(k).getID() == id) key = k;
         if (key == 0) {
-            System.out.println("В коллекции отсутствует элемент с id " + id + ".");
-            return;
+            return ("В коллекции отсутствует элемент с id " + id + ".");
         }
 
         collectionManager.removeOrganizationByKey(key);
         Organization newOrganization = CSVProcessor.parseOrganizationFromString(args[1]);
         collectionManager.addOrganization(key, newOrganization);
-        System.out.println("Элемент c id " + id + " успешно обновлен.");
+        return ("Элемент c id " + id + " успешно обновлен.");
     }
 }

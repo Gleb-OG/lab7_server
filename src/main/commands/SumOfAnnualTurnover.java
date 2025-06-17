@@ -1,5 +1,6 @@
 package main.commands;
 
+import main.model.Organization;
 import main.network.Request;
 
 /**
@@ -15,10 +16,10 @@ public class SumOfAnnualTurnover extends Command {
     public String execute(Request request) {
         if (!collectionManager.getCollection().values().isEmpty()) {
             long sum = collectionManager.getCollection().values()
-                    .stream().mapToLong(org -> org.getAnnualTurnover()).sum();
-            System.out.println("Сумма годового оборота всех организаций: " + sum);
+                    .stream().mapToLong(Organization::getAnnualTurnover).sum();
+            return ("Сумма годового оборота всех организаций: " + sum);
         } else {
-            System.out.println("Коллекция пуста.");
+            return ("Коллекция пуста.");
         }
     }
 }

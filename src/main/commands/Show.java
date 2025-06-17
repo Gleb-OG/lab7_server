@@ -3,6 +3,7 @@ package main.commands;
 import main.model.Organization;
 import main.network.Request;
 
+import java.util.Map;
 import java.util.TreeMap;
 
 /**
@@ -16,12 +17,21 @@ public class Show extends Command {
 
     @Override
     public String execute(Request request) {
-        TreeMap<Integer, Organization> organizations = collectionManager.getCollection();
-        for (Integer key : organizations.keySet()) {
-            System.out.println("---------Organization---------" +
+        String str = "";
+        Map<Integer, Organization> collection = collectionManager.getCollection().entrySet()
+                .stream()
+                .sorted(Map.Entry.comparingByValue())
+                .collect(
+                        TreeMap::new,
+                        (m, e) -> m.put(e.getKey(), e.getValue()),
+                        TreeMap::putAll
+                );
+        for (int key : collection.keySet()) {
+            str += ("---------Organization---------" +
                     "\nkey = " + key +
-                    "\n" + organizations.get(key));
+                    "\n" + collection.get(key));
         }
-        System.out.println("Количество элементов коллекции: " + organizations.size());
+        str += ("Количество элементов коллекции: " + collection.size());
+        return str;
     }
 }

@@ -1,6 +1,5 @@
 package main.commands;
 
-import main.Server;
 import main.model.Organization;
 import main.exceptions.InvalidDataException;
 import main.managers.KeyManager;
@@ -20,15 +19,15 @@ public class RemoveLowerKey extends Command {
     }
 
     @Override
-    public boolean check(String[] args) {
-        return args[0].matches("^\\d+$");
+    public boolean check(Request request) {
+        return request.getCommandArg().matches("^\\d+$");
     }
 
     @Override
     public String execute(Request request) throws IOException {
         try {
             boolean values = collectionManager.getCollection().values().isEmpty();
-            String input = Server.console.getToken(1);
+            String input = request.getCommandArg();
             int key = Validator.validateInt(input);
 
             if (!input.matches("^\\d+$")) {
@@ -49,16 +48,17 @@ public class RemoveLowerKey extends Command {
 
             if (countToRemove == 0 || values) {
                 if (countToRemove == 0 && !values) {
-                    System.out.println("Нет элементов, у которых ключ меньше " + key + ".");
-                } else System.out.println("Коллекция пуста.");
+                    return ("Нет элементов, у которых ключ меньше " + key + ".");
+                } else return ("Коллекция пуста.");
             } else {
-                System.out.println("Удалено " + countToRemove +
-                        " организаций с ключами меньше " + key + ".");
+                return ("Удалено " + countToRemove + " организаций с ключами меньше " + key + ".");
             }
         } catch (NumberFormatException e) {
             System.out.println("Слишком большое число.");
+            return "Слишком большое число.";
         } catch (InvalidDataException e) {
             System.out.println("Это поле может быть только положительным числом.");
+            return "Это поле может быть только положительным числом.";
         }
     }
 
@@ -82,10 +82,10 @@ public class RemoveLowerKey extends Command {
 
         if (countToRemove == 0 || values) {
             if (countToRemove == 0 && !values) {
-                System.out.println("Нет элементов, у которых ключ меньше " + key + ".");
-            } else System.out.println("Коллекция пуста.");
+                return ("Нет элементов, у которых ключ меньше " + key + ".");
+            } else return ("Коллекция пуста.");
         } else {
-            System.out.println("Удалено " + countToRemove +
+            return ("Удалено " + countToRemove +
                     " организаций с ключами меньше " + key + ".");
         }
     }

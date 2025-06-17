@@ -11,6 +11,7 @@ import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
 import java.util.List;
 
+import main.managers.RunManager;
 import main.model.Organization;
 import main.network.Request;
 import main.utils.CSVProcessor;
@@ -18,13 +19,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
-public class Server extends Thread {
+public class Server {
     final int PORT;
     public static Invoker inv = new Invoker();
     public static CollectionManager collectionManager = new CollectionManager();
     public static String filename;
     public static boolean scriptMode = false;
     private static final Logger logger = LoggerFactory.getLogger(Server.class);
+    public static BufferedReader currentScriptReader = null;
+    public static RunManager runManager = new RunManager(inv);
 
     public Server(int PORT) {
         this.PORT = PORT;
@@ -40,7 +43,7 @@ public class Server extends Thread {
             channel.register(selector, SelectionKey.OP_ACCEPT);
             ByteBuffer buffer = ByteBuffer.allocate(4096);
 
-            while (true){
+            while (true) {
 
                 Runtime.getRuntime().addShutdownHook(new Thread(() -> {
                     try {
@@ -51,10 +54,10 @@ public class Server extends Thread {
                     System.out.println("Server stopped. Collection saved.");
                 }));
 
-                if (selector.select() == 0){
+                if (selector.select() == 0) {
                     continue;
                 }
-                for (SelectionKey key: selector.selectedKeys()){
+                for (SelectionKey key: selector.selectedKeys()) {
                     if (key.isAcceptable()){
                         connectClient(selector, key);
                     }
@@ -69,8 +72,8 @@ public class Server extends Thread {
         }
     }
 
-    private void connectClient(Selector selector, SelectionKey key) throws IOException{
-        if (!(key.channel() instanceof ServerSocketChannel channel)){
+    private void connectClient(Selector selector, SelectionKey key) throws IOException {
+        if (!(key.channel() instanceof ServerSocketChannel channel)) {
             logger.error("Обнаружена попытка подключения по неизвестному каналу.");
             System.out.println("Обнаружена попытка подключения по неизвестному каналу.");
             return;
@@ -82,8 +85,8 @@ public class Server extends Thread {
         logger.info("(:^D) Установлено соединение с клиентом (" + client.getRemoteAddress() + ").");
     }
 
-    private void receiveThenSend(ByteBuffer buffer, SelectionKey key) throws IOException{
-        if (!(key.channel() instanceof SocketChannel client)){
+    private void receiveThenSend(ByteBuffer buffer, SelectionKey key) throws IOException {
+        if (!(key.channel() instanceof SocketChannel client)) {
             logger.error("Получено сообщение по неизвестному каналу.");
             System.out.println("Получено сообщение по неизвестному каналу.");
             return;
@@ -99,7 +102,7 @@ public class Server extends Thread {
             client.close();
             return;
         }
-        if (bytesRead == -1){
+        if (bytesRead == -1) {
             System.out.println("|X| Разорвано соединение с клиентом (" + client.getRemoteAddress() + ").");
             logger.warn("|X| Разорвано соединение с клиентом (" + client.getRemoteAddress() + ").");
             client.close();
@@ -109,10 +112,10 @@ public class Server extends Thread {
         buffer.flip();
         Request command = null;
         try (ByteArrayInputStream bais = new ByteArrayInputStream(buffer.array());
-             ObjectInputStream ois = new ObjectInputStream(bais)){
+             ObjectInputStream ois = new ObjectInputStream(bais)) {
             command = (Request) ois.readObject();
         }
-        catch (ClassNotFoundException e){
+        catch (ClassNotFoundException e) {
             logger.error("Ошибка: не удалось прочитать запрос от клиента.");
             System.out.println("Ошибка: не удалось прочитать запрос от клиента.");
         }
@@ -122,39 +125,45 @@ public class Server extends Thread {
         buffer.clear();
 
         String response = "Результат выполнения команды /"+ command.getCommandName() + ", запрошенной клиентом ("
-                + client.getRemoteAddress() + "): \n-----\n" + inv.executeCommand(command) + "\n-----";
+                + client.getRemoteAddress() + "): \n-----\n" + inv.executeClientCommand(command) + "\n-----";
+//        try {
+//            response += inv.executeClientCommand(command) + "\n-----";
+//        } catch (Exception e) {
+//            logger.error(e.getMessage());
+//            System.out.println(e.getMessage());
+//        }
         logger.info(response);
         System.out.println(response);
 
         try (ByteArrayOutputStream baos = new ByteArrayOutputStream();
-             ObjectOutputStream oos = new ObjectOutputStream(baos)){
+             ObjectOutputStream oos = new ObjectOutputStream(baos)) {
             oos.writeObject(response);
             buffer.put(baos.toByteArray());
         }
         buffer.flip();
-        while (buffer.hasRemaining()){
+        while (buffer.hasRemaining()) {
             client.write(buffer);
         }
         buffer.clear();
     }
 
-    public static CollectionManager getCollectionManager () {
+    public static CollectionManager getCollectionManager() {
         return collectionManager;
     }
-    public static void setCollection(CollectionManager collectionManager){
+    public static void setCollection(CollectionManager collectionManager) {
         Server.collectionManager = collectionManager;
     }
 
-    public static void setInvoker(Invoker invoker){
+    public static void setInvoker(Invoker invoker) {
         Server.inv = invoker;
     }
 
-    public static Server setFilename (String filename){
+    public static Server setFilename(String filename) {
         Server.filename = filename;
         return null;
     }
 
-    public static void main (String[]args) {
+    public static void main(String[]args) {
         try {
             if (args.length == 0) {
                 System.out.println("Не введено название csv-файла. Загружена пустая коллекция.");

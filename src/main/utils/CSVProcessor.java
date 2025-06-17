@@ -15,9 +15,7 @@ public class CSVProcessor {
         List<Organization> organizations = new ArrayList<>();
 
         File file = new File(filename);
-        if (!file.exists() || !file.isFile()) {
-            System.out.println("Ошибка: файл не найден.");
-
+        if (file.createNewFile()) {
             return organizations;
         }
 
@@ -65,7 +63,7 @@ public class CSVProcessor {
                             throw new InvalidDataException("Название улицы не может быть пустым: " + line);
                         }
                     } catch (InvalidDataException e) {
-                        System.out.println(e.getMessage());
+                        throw new InvalidDataException(e.getMessage());
                     }
                 } else {
                     throw new InvalidDataException("Неверное количество аргументов: " + line);
@@ -102,6 +100,7 @@ public class CSVProcessor {
 
     public static Organization parseOrganizationFromString(String line) throws InvalidDataException {
         String[] parts = line.split(";");
+        Organization output = null;
         if (parts.length == 9) {
             String name = parts[0];
             try {
@@ -125,22 +124,22 @@ public class CSVProcessor {
                         Location location = new Location(xLocation, yLocation, zLocation);
                         Address address = new Address(streetName, location);
 
-                        return new Organization(name, coordinates, annualTurnover, type, address);
+                        output = new Organization(name, coordinates, annualTurnover, type, address);
                     } else {
                         throw new InvalidDataException("Неверные координаты локации организации: " + line);
                     }
                 } else if (parts[6].equals("_") && parts[7].equals("_") &&
                         parts[8].equals("_") && parts[5].equals("_")) {
-                    return new Organization(name, coordinates, annualTurnover, type, null);
+                    output = new Organization(name, coordinates, annualTurnover, type, null);
                 } else {
                     throw new InvalidDataException("Название улицы не может быть пустым: " + line);
                 }
             } catch (InvalidDataException e) {
-                System.out.println(e.getMessage());
+                throw new InvalidDataException(e.getMessage());
             }
+            return output;
         } else {
             throw new InvalidDataException("Неверное количество аргументов: " + line);
         }
-        return null;
     }
 }

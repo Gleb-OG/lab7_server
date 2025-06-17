@@ -1,6 +1,5 @@
 package main.commands;
 
-import main.Server;
 import main.model.Organization;
 import main.exceptions.InvalidDataException;
 import main.managers.KeyManager;
@@ -19,16 +18,16 @@ public class RemoveGreater extends Command {
     }
 
     @Override
-    public boolean check(String[] args) {
-        if (!args[0].matches("^\\d+$")) return false;
-        long annualTurnover = Long.parseLong(args[0]);
+    public boolean check(Request request) {
+        if (!request.getCommandArg().matches("^\\d+$")) return false;
+        long annualTurnover = Long.parseLong(request.getCommandArg());
         return annualTurnover > 0;
     }
 
     @Override
     public String execute(Request request) throws IOException {
         try {
-            String sizeOfAnnualTurnoverString = Server.console.getToken(1);
+            String sizeOfAnnualTurnoverString = request.getCommandArg();
             List<Organization> old_collection = List.copyOf(collectionManager.getCollection().values());
 
             if (!sizeOfAnnualTurnoverString.matches("^\\d+$")) {
@@ -44,7 +43,7 @@ public class RemoveGreater extends Command {
             int countToRemove = 0;
             while (iterator.hasNext()) {
                 Map.Entry<Integer, Organization> entry = iterator.next();
-                if (entry.getValue().compareTo(compareOrg) > 0) {
+                if (entry.getValue().getAnnualTurnover() > compareOrg.getAnnualTurnover()) {
                     iterator.remove();
                     KeyManager.releaseKey(entry.getKey());
                     countToRemove++;
@@ -52,17 +51,17 @@ public class RemoveGreater extends Command {
             }
 
             if (countToRemove == 0 && !collectionManager.getCollection().values().isEmpty()) {
-                System.out.println("Нет организаций, у которых годовой оборот больше чем " + sizeOfAnnualTurnoverString);
+                return ("Нет организаций, у которых годовой оборот больше чем " + sizeOfAnnualTurnoverString);
             } else if (old_collection.isEmpty()) {
-                System.out.println("Коллекция пуста.");
+                return ("Коллекция пуста.");
             } else {
-                System.out.println("Удалено " + countToRemove +
+                return ("Удалено " + countToRemove +
                         " организаций с годовым оборотом больше чем " + sizeOfAnnualTurnoverString + ".");
             }
         } catch (NumberFormatException e) {
-            System.out.println("Слишком большое число.");
+            return ("Слишком большое число.");
         } catch (InvalidDataException e) {
-            System.out.println("Это поле может быть только положительным числом.");
+            return ("Это поле может быть только положительным числом.");
         }
     }
 
@@ -80,7 +79,7 @@ public class RemoveGreater extends Command {
         int countToRemove = 0;
         while (iterator.hasNext()) {
             Map.Entry<Integer, Organization> entry = iterator.next();
-            if (entry.getValue().compareTo(compareOrg) > 0) {
+            if (entry.getValue().getAnnualTurnover() > compareOrg.getAnnualTurnover()) {
                 iterator.remove();
                 KeyManager.releaseKey(entry.getKey());
                 countToRemove++;
@@ -88,11 +87,11 @@ public class RemoveGreater extends Command {
         }
 
         if (countToRemove == 0 && !collectionManager.getCollection().values().isEmpty()) {
-            System.out.println("Нет организаций, у которых годовой оборот больше чем " + annualTurnoverString);
+            return ("Нет организаций, у которых годовой оборот больше чем " + annualTurnoverString);
         } else if (old_collection.isEmpty()) {
-            System.out.println("Коллекция пуста.");
+            return ("Коллекция пуста.");
         } else {
-            System.out.println("Удалено " + countToRemove +
+            return ("Удалено " + countToRemove +
                     " организаций с годовым оборотом больше чем " + annualTurnoverString + ".");
         }
     }

@@ -4,7 +4,7 @@ import main.Server;
 import main.exceptions.InvalidDataException;
 import main.interfaces.CommandInterface;
 import main.managers.CollectionManager;
-import main.network.Response;
+import main.network.Request;
 
 /**
  * Абстрактный класс, задающий общую структуру команд и реализующий у каждой из них
@@ -35,7 +35,7 @@ public abstract class Command implements CommandInterface {
         return argsAmount;
     }
 
-    public boolean check(String[] args) {
+    public boolean check(Request request) {
         return true;
     }
 

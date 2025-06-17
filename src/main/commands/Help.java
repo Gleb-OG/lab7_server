@@ -15,8 +15,10 @@ public class Help extends Command {
 
     @Override
     public String execute(Request request) {
+        String str = "";
         for (Command command : inv.getClientCommands().values()) {
-            System.out.println("- " + command.nameOfCommand + ": " + command.getDescription());
+            str += ("- " + command.nameOfCommand + ": " + command.getDescription());
         }
+        return str;
     }
 }

@@ -4,9 +4,7 @@ import main.Server;
 import main.model.*;
 import main.exceptions.InvalidDataException;
 import main.network.Request;
-import main.network.Response;
 import main.utils.CSVProcessor;
-import main.utils.InteractiveParser;
 import main.utils.Validator;
 
 /**
@@ -25,25 +23,24 @@ public class InsertElement extends Command {
     }
 
     @Override
-    public boolean check(String[] args) {
-        return args[0].matches("^\\d+$");
+    public boolean check(Request request) {
+        return request.getCommandArg().matches("^\\d+$");
     }
 
     @Override
     public String execute(Request request) throws InvalidDataException {
         try {
-            String updatingKey = request.getCommandObjArg().toString();
+            String updatingKey = request.getCommandArg();
             int key = Validator.validateInt(updatingKey);
 
-            InteractiveParser parser = new InteractiveParser();
-            Organization organization = parser.parseOrganization();
+            Organization organization = (Organization) request.getCommandObjArg();
             if (collectionManager.getCollection().containsKey(key)) {
                 collectionManager.removeOrganizationByKey(key);
             }
             collectionManager.addOrganization(key, organization);
-            return new Response("Элемент успешно добавлен в коллекцию по ключу " + key);
+            return ("Элемент успешно добавлен в коллекцию по ключу " + key);
         } catch (InvalidDataException e) {
-            return new Response(e.getMessage());
+            return e.getMessage();
         }
     }
 
@@ -55,6 +52,6 @@ public class InsertElement extends Command {
             collectionManager.removeOrganizationByKey(key);
         }
         collectionManager.addOrganization(key, organization);
-        return new Response("Элемент успешно добавлен в коллекцию по ключу " + key);
+        return ("Элемент успешно добавлен в коллекцию по ключу " + key);
     }
 }

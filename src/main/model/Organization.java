@@ -2,6 +2,8 @@ package main.model;
 
 import main.utils.IDGenerator;
 import java.time.LocalDate;
+import static java.lang.CharSequence.compare;
+
 
 /**
  * Класс, представляющий структуру организации.
@@ -69,7 +71,7 @@ public class Organization implements Comparable<Organization> {
 
     @Override
     public int compareTo(Organization other) {
-        return Long.compare(this.annualTurnover, other.annualTurnover);
+        return compare(this.name, other.name);
     }
 
     @Override

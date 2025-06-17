@@ -1,6 +1,8 @@
 package main.commands;
 
 import main.network.Request;
+import static main.Server.inv;
+
 
 /**
  * Команда, завершающая работу программы без сохранения.
@@ -13,6 +15,6 @@ public class Exit extends Command {
 
     @Override
     public String execute(Request request) {
-        System.exit(0);
+        return inv.executeServerCommand(new Request("save"));
     }
 }

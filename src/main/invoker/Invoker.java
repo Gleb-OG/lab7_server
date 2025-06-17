@@ -24,7 +24,6 @@ public class Invoker {
         clientCommands.put("update", new UpdateID());
         clientCommands.put("remove_key", new RemoveKey());
         clientCommands.put("clear", new Clear());
-        clientCommands.put("save", new Save());
         clientCommands.put("execute_script", new ExecuteScript());
         clientCommands.put("exit", new Exit());
         clientCommands.put("remove_greater", new RemoveGreater());
@@ -33,6 +32,8 @@ public class Invoker {
         clientCommands.put("sum_of_annual_turnover", new SumOfAnnualTurnover());
         clientCommands.put("filter_by_annual_turnover", new FilterByAnnualTurnover());
         clientCommands.put("filter_greater_than_official_address", new FilterGreaterThanOfficialAddress());
+
+        serverCommands.put("save", new Save());
     }
 
     public Map<String, Command> getClientCommands() {
@@ -51,9 +52,19 @@ public class Invoker {
         return serverCommands.get(key);
     }
 
-    public String executeCommand(Request request) {
+    public String executeClientCommand(Request request) {
         try {
             Command command = getClientCommandByKey(request.getCommandName());
+            return command.execute(request);
+        } catch (NoSuchCommandException | InvalidDataException | IOException e){
+            e.printStackTrace();
+            return "Не найдена команда: " + e.getMessage() + ".";
+        }
+    }
+
+    public String executeServerCommand(Request request) {
+        try {
+            Command command = getServerCommandByKey(request.getCommandName());
             return command.execute(request);
         } catch (NoSuchCommandException | InvalidDataException | IOException e){
             e.printStackTrace();

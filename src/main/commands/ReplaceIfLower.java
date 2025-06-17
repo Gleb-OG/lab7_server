@@ -7,7 +7,6 @@ import main.managers.KeyManager;
 import main.network.Request;
 import main.utils.CSVProcessor;
 import main.utils.IDGenerator;
-import main.utils.InteractiveParser;
 import main.utils.Validator;
 import java.util.TreeMap;
 
@@ -26,16 +25,16 @@ public class ReplaceIfLower extends Command {
     }
 
     @Override
-    public boolean check(String[] args) {
-        if (!args[0].matches("^\\d+$")) return false;
-        int key = Integer.parseInt(args[0]);
+    public boolean check(Request request) {
+        if (!request.getCommandArg().matches("^\\d+$")) return false;
+        int key = Integer.parseInt(request.getCommandArg());
         return IDGenerator.checkIdExisting(key);
     }
 
     @Override
     public String execute(Request request) {
         try {
-            String updatingKey = Server.console.getToken(1);
+            String updatingKey = request.getCommandArg();
             if (!updatingKey.matches("^\\d+$")) {
                 throw new InvalidDataException("Ключ может быть только натуральным числом.");
             }
@@ -43,30 +42,27 @@ public class ReplaceIfLower extends Command {
 
             if (KeyManager.checkKeyExisting(key)) {
                 TreeMap<Integer, Organization> collection = collectionManager.getCollection();
-                InteractiveParser parser = new InteractiveParser();
                 try {
-                    Organization oldOrganization = collectionManager.getOrganizationByKey(key);
-                    if (oldOrganization != null) {
-                        Organization newOrganization = parser.parseOrganization();
+                    Organization newOrganization = (Organization) request.getCommandObjArg();
 
-                        if (collection.get(key).getAnnualTurnover() > newOrganization.getAnnualTurnover()) {
-                            collectionManager.removeOrganizationByKey(key);
-                            collectionManager.addOrganization(key, newOrganization);
-                            System.out.println("Элемент с ключом " + key + " успешно обновлен.");
-                        } else {
-                            System.out.println("Элемент с ключом " + key + " не был обновлен, " +
-                                    "так как у введенной организации годовой оборот больше или равен нынешнему.");
-                        }
+                    if (collection.get(key).getAnnualTurnover() > newOrganization.getAnnualTurnover()) {
+                        collectionManager.removeOrganizationByKey(key);
+                        collectionManager.addOrganization(key, newOrganization);
+                        return ("Элемент с ключом " + key + " успешно обновлен.");
+                    } else {
+                        return ("Элемент с ключом " + key + " не был обновлен, " +
+                                "так как у введенной организации годовой оборот больше или равен нынешнему.");
                     }
                 } catch (IndexOutOfBoundsException ex) {
-                    System.out.println("Введите натуральное число.");
-                } catch (InvalidDataException ignore) {
+                    return "Введите натуральное число.";
+                } catch (InvalidDataException e) {
+                    return e.getMessage();
                 }
             } else {
-                System.out.println("Элемент с ключом " + key + " отсутствует.");
+                return "Элемент с ключом " + key + " отсутствует.";
             }
         } catch (InvalidDataException e) {
-            System.out.println(e.getMessage());
+            return e.getMessage();
         }
     }
 
@@ -78,18 +74,15 @@ public class ReplaceIfLower extends Command {
         if (KeyManager.checkKeyExisting(key)) {
             TreeMap<Integer, Organization> collection = collectionManager.getCollection();
             try {
-                Organization oldOrganization = collectionManager.getOrganizationByKey(key);
-                if (oldOrganization != null) {
-                    Organization newOrganization = CSVProcessor.parseOrganizationFromString(args[1]);
+                Organization newOrganization = CSVProcessor.parseOrganizationFromString(args[1]);
 
-                    if (collection.get(key).getAnnualTurnover() > newOrganization.getAnnualTurnover()) {
-                        collectionManager.removeOrganizationByKey(key);
-                        collectionManager.addOrganization(key, newOrganization);
-                        System.out.println("Элемент с ключом " + key + " успешно обновлен.");
-                    } else {
-                        System.out.println("Элемент с ключом " + key + " не был обновлен, " +
-                                "так как у введенной организации годовой оборот больше или равен нынешнему.");
-                    }
+                if (collection.get(key).getAnnualTurnover() > newOrganization.getAnnualTurnover()) {
+                    collectionManager.removeOrganizationByKey(key);
+                    collectionManager.addOrganization(key, newOrganization);
+                    return ("Элемент с ключом " + key + " успешно обновлен.");
+                } else {
+                    return ("Элемент с ключом " + key + " не был обновлен, " +
+                            "так как у введенной организации годовой оборот больше или равен нынешнему.");
                 }
             } catch (IndexOutOfBoundsException | NullPointerException e) {
                 throw new InvalidDataException("Введите натуральное число.");
@@ -97,7 +90,7 @@ public class ReplaceIfLower extends Command {
                 throw new InvalidDataException(e.getMessage());
             }
         } else {
-            System.out.println("Элемент с ключом " + key + " отсутствует.");
+            return ("Элемент с ключом " + key + " отсутствует.");
         }
     }
 }

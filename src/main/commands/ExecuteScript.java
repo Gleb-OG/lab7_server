@@ -26,13 +26,13 @@ public class ExecuteScript extends Command {
     public String execute(Request request) {
         Server.scriptMode = true;
         try {
-            String file = Server.console.getToken(1);
+            String file = request.getCommandArg();
             ScriptManager scriptManager = new ScriptManager(file);
-            Server.runManager.runScript(scriptManager, list);
+            return Server.runManager.runScript(scriptManager, list);
         } catch (IndexOutOfBoundsException e) {
-            System.out.println("Не указано имя файла для выполнения скрипта.");
+            return ("Не указано имя файла для выполнения скрипта.");
         } catch (IOException e) {
-            System.out.println("Ошибка при чтении скрипта: " + e.getMessage());
+            return ("Ошибка при чтении скрипта: " + e.getMessage());
         } finally {
             Server.scriptMode = false;
             Server.currentScriptReader = null;
