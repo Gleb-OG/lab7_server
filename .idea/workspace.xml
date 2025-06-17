@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="14e2157b-7e1c-498a-94b6-7f3aadcb533b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab6_server.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab/Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab/commands/Clear.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab/commands/Command.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab/commands/ExecuteScript.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab/commands/Exit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab/commands/FilterByAnnualTurnover.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab/commands/FilterGreaterThanOfficialAddress.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab/commands/Help.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab/commands/Info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab/commands/InsertElement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab/commands/RemoveGreater.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab/commands/RemoveKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab/commands/RemoveLowerKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab/commands/ReplaceIfLower.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab/commands/Save.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab/commands/Show.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab/commands/SumOfAnnualTurnover.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab/commands/UpdateID.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab/exceptions/FileAccessException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab/exceptions/InvalidDataException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab/exceptions/NoSuchCommandException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab/exceptions/WrongArgsNumber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab/interfaces/CommandInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab/invoker/Invoker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab/managers/CollectionManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab/managers/ConsoleManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab/managers/KeyManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab/managers/RunManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab/managers/ScriptManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab/model/Address.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab/model/Coordinates.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab/model/Location.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab/model/Organization.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab/model/OrganizationType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab/network/Request.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab/network/Response.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab/utils/CSVProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab/utils/IDGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab/utils/InteractiveParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab/utils/Validator.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Gleb-OG&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Gleb-OG/lab6_server.git&quot;,
+    &quot;accountId&quot;: &quot;9f26d40a-31e9-43cd-8e64-fea92a3b5960&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2yb8IZSiXZhVMbIAoLlRrxczxPr" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Глеб/IdeaProjects/lab6_server/src/lab",
+    "onboarding.tips.debug.path": "C:/Users/Глеб/IdeaProjects/lab6_server/src/Main.java"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Глеб\IdeaProjects\lab6_server\src\lab" />
+      <recent name="C:\Users\Глеб\IdeaProjects\lab6_server\src" />
+      <recent name="C:\Users\Глеб\IdeaProjects\lab6_server" />
+      <recent name="C:\Users\Глеб\IdeaProjects\lab6_server\src\invoker" />
+      <recent name="C:\Users\Глеб\IdeaProjects\lab6_server\src\utils" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Глеб\IdeaProjects\lab6_server\src" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="14e2157b-7e1c-498a-94b6-7f3aadcb533b" name="Changes" comment="" />
+      <created>1750091834451</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1750091834451</updated>
+    </task>
+    <servers />
+  </component>
+</project>
