@@ -65,8 +65,8 @@ public class UpdateID extends Command {
             return ("В коллекции отсутствует элемент с id " + id + ".");
         }
 
-        collectionManager.removeOrganizationByKey(key);
         Organization newOrganization = CSVProcessor.parseOrganizationFromString(args[1]);
+        collectionManager.removeOrganizationByKey(key);
         collectionManager.addOrganization(key, newOrganization);
         return ("Элемент c id " + id + " успешно обновлен.");
     }

@@ -59,13 +59,12 @@ public class CollectionManager {
             Organization oldOrganization = getOrganizationByKey(key);
             if (oldOrganization != null) {
                 collection.remove(key);
-                Organization newOrganization = organization;
-                collection.put(key, newOrganization);
+                collection.put(key, organization);
             }
         } catch (IndexOutOfBoundsException e) {
             throw new InvalidDataException("Введите натуральное число.");
         } catch (InvalidDataException e) {
-            throw new InvalidDataException (e.getMessage());
+            throw new InvalidDataException(e.getMessage());
         }
     }
 

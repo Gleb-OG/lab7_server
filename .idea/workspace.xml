@@ -7,30 +7,14 @@
     <list default="true" id="14e2157b-7e1c-498a-94b6-7f3aadcb533b" name="Changes" comment="probably done, but without any testing">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/Clear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/Clear.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/Command.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/commands/ExecuteScript.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/ExecuteScript.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/Exit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/Exit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/FilterByAnnualTurnover.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/FilterByAnnualTurnover.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/FilterGreaterThanOfficialAddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/FilterGreaterThanOfficialAddress.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/Help.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/Help.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/Info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/Info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/InsertElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/InsertElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/RemoveGreater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/RemoveGreater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/RemoveKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/RemoveKey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/RemoveLowerKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/RemoveLowerKey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/ReplaceIfLower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/ReplaceIfLower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/Save.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/Save.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/Show.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/Show.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/SumOfAnnualTurnover.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/SumOfAnnualTurnover.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/commands/UpdateID.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/UpdateID.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/invoker/Invoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/invoker/Invoker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/managers/CollectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/managers/CollectionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/managers/RunManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/managers/RunManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/model/Organization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/model/Organization.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/network/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/network/Request.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/utils/CSVProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/utils/CSVProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/utils/InteractiveParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/managers/ConsoleManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/managers/RunManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/managers/ScriptManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/managers/ScriptManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,11 +65,12 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Глеб/IdeaProjects/lab6_server/src/lab",
+    "last_opened_file_path": "C:/Users/Глеб/OneDrive/Desktop/LabN6_server",
     "onboarding.tips.debug.path": "C:/Users/Глеб/IdeaProjects/lab6_server/src/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2"
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -98,6 +83,9 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Глеб\IdeaProjects\lab6_server\src" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="main" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -125,8 +113,27 @@
       <option name="project" value="LOCAL" />
       <updated>1750138868928</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="probably done, but without any testing">
+      <option name="closed" value="true" />
+      <created>1750149596433</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1750149596433</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="-such a mess...&#10;-only started" />

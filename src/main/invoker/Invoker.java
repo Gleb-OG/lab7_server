@@ -5,6 +5,9 @@ import main.exceptions.InvalidDataException;
 import main.exceptions.NoSuchCommandException;
 import main.network.Request;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -15,6 +18,7 @@ import java.util.Map;
 public class Invoker {
     private final Map<String, Command> clientCommands = new HashMap<>();
     private final Map<String, Command> serverCommands = new HashMap<>();
+    private static final Logger logger = LoggerFactory.getLogger(Invoker.class);
 
     public Invoker() {
         clientCommands.put("help", new Help());
@@ -56,8 +60,8 @@ public class Invoker {
         try {
             Command command = getClientCommandByKey(request.getCommandName());
             return command.execute(request);
-        } catch (NoSuchCommandException | InvalidDataException | IOException e){
-            e.printStackTrace();
+        } catch (NoSuchCommandException | InvalidDataException | IOException e) {
+            logger.error("Ошибка ", e);
             return "Не найдена команда: " + e.getMessage() + ".";
         }
     }
@@ -66,8 +70,8 @@ public class Invoker {
         try {
             Command command = getServerCommandByKey(request.getCommandName());
             return command.execute(request);
-        } catch (NoSuchCommandException | InvalidDataException | IOException e){
-            e.printStackTrace();
+        } catch (NoSuchCommandException | InvalidDataException | IOException e) {
+            logger.error("Ошибка ", e);
             return "Не найдена команда: " + e.getMessage() + ".";
         }
     }
