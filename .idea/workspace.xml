@@ -4,17 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14e2157b-7e1c-498a-94b6-7f3aadcb533b" name="Changes" comment="probably done, but without any testing">
+    <list default="true" id="14e2157b-7e1c-498a-94b6-7f3aadcb533b" name="Changes" comment="server part of the project is done, require some tests with client part. The position of the files will also be reorganized.">
+      <change afterPath="$PROJECT_DIR$/src/main/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/utils/InteractiveParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab6_server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/lab6_server.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/ExecuteScript.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/ExecuteScript.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/UpdateID.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/commands/UpdateID.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/invoker/Invoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/invoker/Invoker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/managers/CollectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/managers/CollectionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/managers/ConsoleManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/managers/RunManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/managers/ScriptManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/managers/ScriptManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,6 +81,7 @@
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="main" />
+      <recent name="main.utils" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -121,7 +117,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750149596433</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="server part of the project is done, require some tests with client part. The position of the files will also be reorganized.">
+      <option name="closed" value="true" />
+      <created>1756352793774</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1756352793774</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -139,6 +143,7 @@
     <MESSAGE value="-such a mess...&#10;-only started" />
     <MESSAGE value="wrote Server.java and started to rework existing classes of commands" />
     <MESSAGE value="probably done, but without any testing" />
-    <option name="LAST_COMMIT_MESSAGE" value="probably done, but without any testing" />
+    <MESSAGE value="server part of the project is done, require some tests with client part. The position of the files will also be reorganized." />
+    <option name="LAST_COMMIT_MESSAGE" value="server part of the project is done, require some tests with client part. The position of the files will also be reorganized." />
   </component>
 </project>
