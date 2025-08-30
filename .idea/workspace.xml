@@ -2,64 +2,20 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="lab6_client:jar" />
       <artifact name="lab6_server:jar" />
+      <artifact name="lab6_server:jar2" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14e2157b-7e1c-498a-94b6-7f3aadcb533b" name="Changes" comment="The first draft of the client part added to the project.">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/lab6_server_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/slf4j_api.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="14e2157b-7e1c-498a-94b6-7f3aadcb533b" name="Changes" comment="finally done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab6_server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/lab6_server.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/Clear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/commands/Clear.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/commands/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/ExecuteScript.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/commands/ExecuteScript.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/Exit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/commands/Exit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/FilterByAnnualTurnover.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/commands/FilterByAnnualTurnover.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/FilterGreaterThanOfficialAddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/commands/FilterGreaterThanOfficialAddress.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/Help.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/commands/Help.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/Info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/commands/Info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/InsertElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/commands/InsertElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/RemoveGreater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/commands/RemoveGreater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/RemoveKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/commands/RemoveKey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/RemoveLowerKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/commands/RemoveLowerKey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/ReplaceIfLower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/commands/ReplaceIfLower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/Save.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/commands/Save.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/Show.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/commands/Show.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/SumOfAnnualTurnover.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/commands/SumOfAnnualTurnover.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/commands/UpdateID.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/commands/UpdateID.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/exceptions/FileAccessException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/exceptions/FileAccessException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/exceptions/InvalidDataException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/exceptions/InvalidDataException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/exceptions/NoSuchCommandException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/exceptions/NoSuchCommandException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/exceptions/WrongArgsNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/exceptions/WrongArgsNumber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/interfaces/CommandInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/interfaces/CommandInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/invoker/Invoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/invoker/Invoker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/managers/CollectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/managers/CollectionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/managers/KeyManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/managers/KeyManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/managers/ScriptManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/managers/ScriptManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/model/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/model/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/model/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/model/Coordinates.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/model/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/model/Location.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/model/Organization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/model/Organization.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/model/OrganizationType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/model/OrganizationType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/network/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/network/Request.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/network/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/network/Response.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/utils/CSVProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/utils/CSVProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/utils/IDGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/utils/IDGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/utils/InteractiveParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/utils/InteractiveParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/utils/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/utils/Validator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/utils/CSVProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/utils/CSVProcessor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,12 +61,13 @@
     "Application.Client.executor": "Run",
     "Application.Server.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
+    "Maven.client [package].executor": "Run",
     "Maven.my-project [package].executor": "Run",
+    "Maven.server [package].executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "17",
     "kotlin-language-version-configured": "true",
@@ -164,7 +121,6 @@
     <configuration name="Server" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="main.Server" />
       <module name="lab6_server" />
-      <option name="PROGRAM_PARAMETERS" value="123sadass" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -223,7 +179,15 @@
       <option name="project" value="LOCAL" />
       <updated>1756358058694</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="finally done">
+      <option name="closed" value="true" />
+      <created>1756529371230</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1756529371230</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -243,6 +207,7 @@
     <MESSAGE value="probably done, but without any testing" />
     <MESSAGE value="server part of the project is done, require some tests with client part. The position of the files will also be reorganized." />
     <MESSAGE value="The first draft of the client part added to the project." />
-    <option name="LAST_COMMIT_MESSAGE" value="The first draft of the client part added to the project." />
+    <MESSAGE value="finally done" />
+    <option name="LAST_COMMIT_MESSAGE" value="finally done" />
   </component>
 </project>

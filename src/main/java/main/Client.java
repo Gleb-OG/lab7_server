@@ -144,7 +144,7 @@ public class Client {
     }
 
     public static void main(String[] args) throws Exception {
-        Client client = new Client(2225);
+        Client client = new Client(9959);
         client.start();
     }
 }

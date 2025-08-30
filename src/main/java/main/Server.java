@@ -146,6 +146,9 @@ public class Server {
         try {
             if (args.length == 0) {
                 logger.warn("Не введено название csv-файла. Загружена пустая коллекция.");
+                filename = "OrganizationsBase";
+                List<Organization> organizations = CSVProcessor.loadFromCSV(filename);
+                collectionManager.loadCollectionWithoutKeys(organizations);
             } else {
                 filename = args[0];
                 List<Organization> organizations = CSVProcessor.loadFromCSV(filename);
@@ -156,7 +159,7 @@ public class Server {
             System.exit(-1);
         }
 
-        int port = 2225;
+        int port = 9959;
         Server server = new Server(port);
         server.start();
     }

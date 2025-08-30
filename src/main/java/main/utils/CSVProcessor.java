@@ -7,8 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeMap;
 
-import static main.Server.collectionManager;
-
 /**
  * Реализует парсинг csv-файлов, запись в них.
  */
