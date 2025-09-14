@@ -147,6 +147,6 @@ public class InteractiveParser {
         OrganizationType type = readOrganizationType();
         Address address = readAddress();
 
-        return new Organization(name, coordinates, annualTurnover, type, address);
+        return new Organization(name, coordinates, annualTurnover, type, address, "unknown");
     }
 }

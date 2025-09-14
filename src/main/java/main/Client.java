@@ -130,12 +130,12 @@ public class Client {
 
         if (objectArgsAmount == 1) {
             Organization org = interParser.parseOrganization();
-            return new Request(commandName, args[1], org);
+            return new Request(commandName, args[1], org, login, password);
         }
 
-        if (stringArgsAmount == 0) return new Request(commandName);
+        if (stringArgsAmount == 0) return new Request(commandName, login, password);
 
-        return new Request(commandName, args[1]);
+        return new Request(commandName, args[1], login, password);
     }
 
     private static void closeConnection() {

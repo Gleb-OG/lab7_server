@@ -36,11 +36,12 @@ public class FilterGreaterThanOfficialAddress extends Command {
             for (int key : collectionManager.getCollection().keySet()) {
                 Organization org = collectionManager.getCollection().get(key);
                 if (org == null) {continue;}
-                if (org.getOfficialAddress() != null
-                        && org.getOfficialAddress().getStreet().length() > streetName.length()) {
-                    str += ("-------Organization-------" + "\nkey = " + key + "\n" +
-                            collectionManager.getCollection().get(key));
-                    count++;
+                if (org.getOfficialAddress() != null && org.getOfficialAddress().getStreet() != null) {
+                     if (org.getOfficialAddress().getStreet().length() > streetName.length()) {
+                        str += ("-------Organization-------" + "\nkey = " + key + "\n" +
+                                collectionManager.getCollection().get(key));
+                        count++;
+                    }
                 }
             }
 

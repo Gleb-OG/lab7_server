@@ -10,12 +10,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14e2157b-7e1c-498a-94b6-7f3aadcb533b" name="Changes" comment="finally done">
+    <list default="true" id="14e2157b-7e1c-498a-94b6-7f3aadcb533b" name="Changes" comment="fixed some bags">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/lab6_server_jar2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/database/DBManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/utils/PasswordHashing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/commands/Clear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/commands/Clear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/commands/ExecuteScript.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/commands/ExecuteScript.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/commands/FilterByAnnualTurnover.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/commands/FilterByAnnualTurnover.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/commands/FilterGreaterThanOfficialAddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/commands/FilterGreaterThanOfficialAddress.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/commands/InsertElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/commands/InsertElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/commands/RemoveGreater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/commands/RemoveGreater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/commands/RemoveLowerKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/commands/RemoveLowerKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/commands/ReplaceIfLower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/commands/ReplaceIfLower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/commands/Save.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/commands/Save.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/commands/UpdateID.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/commands/UpdateID.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/managers/CollectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/managers/CollectionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/model/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/model/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/model/Organization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/model/Organization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/network/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/network/Request.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/utils/CSVProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/utils/CSVProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/utils/IDGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/utils/IDGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/utils/InteractiveParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/utils/InteractiveParser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +74,6 @@
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="2yb8IZSiXZhVMbIAoLlRrxczxPr" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -64,19 +86,35 @@
     "Maven.client [package].executor": "Run",
     "Maven.my-project [package].executor": "Run",
     "Maven.server [package].executor": "Run",
+    "Maven.server [verify].executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "extract.method.default.visibility": "private",
     "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "17",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Глеб/IdeaProjects/lab6_server/src/META-INF",
+    "last_opened_file_path": "C:/Users/Глеб/Desktop/lab6_server",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "C:/Users/Глеб/IdeaProjects/lab6_server/src/Main.java",
-    "project.structure.last.edited": "Artifacts",
+    "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15039062",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -113,14 +151,14 @@
   <component name="RunManager" selected="Application.Client">
     <configuration name="Client" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="main.Client" />
-      <module name="lab6_server" />
+      <module name="server" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="Server" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="main.Server" />
-      <module name="lab6_server" />
+      <module name="server" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -130,6 +168,14 @@
       <item itemvalue="Application.Client" />
     </list>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.25410.129" />
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-IU-251.25410.129" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -138,6 +184,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1750091834451</updated>
+      <workItem from="1757499350633" duration="314000" />
+      <workItem from="1757673416766" duration="60297000" />
     </task>
     <task id="LOCAL-00001" summary="-such a mess...&#10;-only started">
       <option name="closed" value="true" />
@@ -187,8 +235,35 @@
       <option name="project" value="LOCAL" />
       <updated>1756529371230</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fixed some bags">
+      <option name="closed" value="true" />
+      <created>1756532974713</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1756532974713</updated>
+    </task>
+    <task id="LOCAL-00008" summary="fixed some bags">
+      <option name="closed" value="true" />
+      <created>1756533065577</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1756533065577</updated>
+    </task>
+    <task id="LOCAL-00009" summary="fixed some bags">
+      <option name="closed" value="true" />
+      <created>1756533116990</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1756533116990</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -208,6 +283,7 @@
     <MESSAGE value="server part of the project is done, require some tests with client part. The position of the files will also be reorganized." />
     <MESSAGE value="The first draft of the client part added to the project." />
     <MESSAGE value="finally done" />
-    <option name="LAST_COMMIT_MESSAGE" value="finally done" />
+    <MESSAGE value="fixed some bags" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed some bags" />
   </component>
 </project>

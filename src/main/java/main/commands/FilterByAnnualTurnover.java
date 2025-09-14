@@ -37,7 +37,7 @@ public class FilterByAnnualTurnover extends Command {
                 Organization org = collectionManager.getCollection().get(key);
                 if (org == null) {continue;}
                 if (org.getAnnualTurnover() == annualTurnover) {
-                    str += ("-------Organization-------" +
+                    str += ("\n-------Organization-------" +
                             "\nkey = " + key +
                             "\n" + org);
                     count++;

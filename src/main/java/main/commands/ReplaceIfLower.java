@@ -43,8 +43,7 @@ public class ReplaceIfLower extends Command {
 
                     if (oldOrganization == null ||
                             oldOrganization.getAnnualTurnover() > newOrganization.getAnnualTurnover()) {
-                        collectionManager.removeOrganizationByKey(key);
-                        collectionManager.addOrganization(key, newOrganization);
+                        collectionManager.updateKey(key, newOrganization);
                         return ("Элемент с ключом " + key + " успешно обновлен.");
                     } else {
                         return ("Элемент с ключом " + key + " не был обновлен, " +
@@ -75,8 +74,7 @@ public class ReplaceIfLower extends Command {
 
                 if (oldOrganization == null ||
                         oldOrganization.getAnnualTurnover() > newOrganization.getAnnualTurnover()) {
-                    collectionManager.removeOrganizationByKey(key);
-                    collectionManager.addOrganization(key, newOrganization);
+                    collectionManager.updateKey(key, newOrganization);
                     return ("Элемент с ключом " + key + " успешно обновлен.");
                 } else {
                     return ("Элемент с ключом " + key + " не был обновлен, " +

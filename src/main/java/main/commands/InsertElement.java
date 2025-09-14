@@ -30,10 +30,7 @@ public class InsertElement extends Command {
             int key = Validator.validateInt(updatingKey);
 
             Organization organization = (Organization) request.getCommandObjArg();
-            if (collectionManager.getCollection().containsKey(key)) {
-                collectionManager.removeOrganizationByKey(key);
-            }
-            collectionManager.addOrganization(key, organization);
+            collectionManager.insertOrganization(key, organization);
             return ("Элемент успешно добавлен в коллекцию по ключу " + key);
         } catch (InvalidDataException e) {
             return e.getMessage();
@@ -44,10 +41,7 @@ public class InsertElement extends Command {
     public String execute(String[] args) throws InvalidDataException {
         int key = Integer.parseInt(args[0]);
         Organization organization = CSVProcessor.parseOrganizationFromString(args[1]);
-        if (collectionManager.getCollection().containsKey(key)) {
-            collectionManager.removeOrganizationByKey(key);
-        }
-        collectionManager.addOrganization(key, organization);
+        collectionManager.insertOrganization(key, organization);
         return ("Элемент успешно добавлен в коллекцию по ключу " + key);
     }
 }

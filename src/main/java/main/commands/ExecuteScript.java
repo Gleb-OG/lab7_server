@@ -4,8 +4,6 @@ import main.Server;
 import main.network.Request;
 
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * Команда, запускающая скрипт из файла.

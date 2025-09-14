@@ -1,6 +1,7 @@
 package main.commands;
 
 import static main.Server.collectionManager;
+
 import main.managers.KeyManager;
 import main.network.Request;
 import java.util.TreeMap;
@@ -19,7 +20,7 @@ public class Clear extends Command {
         if (collectionManager.getCollection().isEmpty()) {
             return "Коллекция итак пустая.";
         } else {
-            collectionManager.loadCollection(new TreeMap<>());
+            collectionManager.clearCollection();
             KeyManager.clearAllKeys();
             return "Коллекция очищена.";
         }

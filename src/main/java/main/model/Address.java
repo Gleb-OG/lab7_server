@@ -8,9 +8,9 @@ import java.io.Serializable;
 
 public class Address implements Serializable {
     private String street; //Длина строки не должна быть больше 103, Поле не может быть null
-    private main.model.Location town; //Поле может быть null
+    private Location town; //Поле может быть null
 
-    public Address(String inputStreetName, main.model.Location inputTown) {
+    public Address(String inputStreetName, Location inputTown) {
         this.street = inputStreetName;
         this.town = inputTown;
     }

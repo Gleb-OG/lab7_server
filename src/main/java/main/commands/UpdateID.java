@@ -70,8 +70,7 @@ public class UpdateID extends Command {
         }
 
         Organization newOrganization = CSVProcessor.parseOrganizationFromString(args[1]);
-        collectionManager.removeOrganizationByKey(key);
-        collectionManager.addOrganization(key, newOrganization);
+        collectionManager.updateKey(key, newOrganization);
         return ("Элемент c id " + id + " успешно обновлен.");
     }
 }

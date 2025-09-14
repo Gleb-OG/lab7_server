@@ -7,6 +7,7 @@ import main.managers.KeyManager;
 import main.network.Request;
 import main.utils.Validator;
 import java.io.IOException;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 
@@ -35,16 +36,19 @@ public class RemoveLowerKey extends Command {
                 throw new InvalidDataException("Это поле может быть только числом.");
             }
 
+            HashSet<Integer> keysToRemove = new HashSet<>();
             Iterator<Map.Entry<Integer, Organization>> iterator = collectionManager.getCollection().entrySet().iterator();
-
-            int countToRemove = 0;
             while (iterator.hasNext()) {
                 Map.Entry<Integer, Organization> entry = iterator.next();
                 if (entry.getKey() < key) {
-                    iterator.remove();
-                    KeyManager.releaseKey(entry.getKey());
-                    countToRemove++;
+                    keysToRemove.add(entry.getKey());
                 }
+            }
+
+            int countToRemove = 0;
+            for (int k : keysToRemove) {
+                collectionManager.removeOrganizationByKey(k);
+                countToRemove++;
             }
 
             if (countToRemove == 0 || values) {

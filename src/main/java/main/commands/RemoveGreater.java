@@ -41,17 +41,20 @@ public class RemoveGreater extends Command {
             Organization compareOrg = new Organization();
             compareOrg.setAnnualTurnover(sizeOfAnnualTurnover);
 
+            HashSet<Integer> keysToRemove = new HashSet<>();
             Iterator<Map.Entry<Integer, Organization>> iterator = collectionManager.getCollection().entrySet().iterator();
-
-            int countToRemove = 0;
             while (iterator.hasNext()) {
                 Map.Entry<Integer, Organization> entry = iterator.next();
                 if (entry.getValue() == null) {continue;}
                 if (entry.getValue().getAnnualTurnover() > compareOrg.getAnnualTurnover()) {
-                    iterator.remove();
-                    KeyManager.releaseKey(entry.getKey());
-                    countToRemove++;
+                    keysToRemove.add(entry.getKey());
                 }
+            }
+
+            int countToRemove = 0;
+            for (int key : keysToRemove) {
+                collectionManager.removeOrganizationByKey(key);
+                countToRemove++;
             }
 
             if (countToRemove == 0) {
