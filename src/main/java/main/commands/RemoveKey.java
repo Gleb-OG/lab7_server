@@ -33,11 +33,11 @@ public class RemoveKey extends Command {
                 throw new InvalidDataException("Ключ должен быть строго больше нуля.");
             }
             int key = Integer.parseInt(removingKey);
-            if (KeyManager.checkKeyExisting(key)) {
+            if (KeyManager.checkKeyExisting(key) && collectionManager.checkAccessToOrganization(key, request.getLogin())) {
                 collectionManager.removeOrganizationByKey(key);
                 return ("Элемент с ключом " + key + " удалён из коллекции.");
             } else {
-                return ("Элемента с ключом " + key + " не обнаружено в коллекции.");
+                return ("Элемент с ключом " + key + " недоступен или отсутствует.");
             }
         } catch (InvalidDataException e) {
             return e.getMessage();
@@ -47,15 +47,11 @@ public class RemoveKey extends Command {
     @Override
     public String execute(String[] args) {
         int key = Integer.parseInt(args[0]);
-        try {
-            if (KeyManager.checkKeyExisting(key)) {
-                collectionManager.removeOrganizationByKey(key);
-                return ("Элемент с ключом " + key + " удалён из коллекции.");
-            } else {
-                return ("Элемента с ключом " + key + " не обнаружено в коллекции.");
-            }
-        } catch (InvalidDataException e) {
-            return e.getMessage();
+        if (KeyManager.checkKeyExisting(key) && collectionManager.checkAccessToOrganization(key, "default")) {
+            collectionManager.removeOrganizationByKey(key);
+            return ("Элемент с ключом " + key + " удалён из коллекции.");
+        } else {
+            return ("Элемент с ключом " + key + " недоступен или отсутствует.");
         }
     }
 }

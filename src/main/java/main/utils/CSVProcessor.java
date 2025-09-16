@@ -117,7 +117,7 @@ public class CSVProcessor {
                     if (parts[6].equals("_") && parts[7].equals("_") && parts[8].equals("_")) {
                         String streetName = Validator.validateStreetName(parts[5]);
                         Address address = new Address(streetName);
-                        return new Organization(name, coordinates, annualTurnover, type, address, "unknown");
+                        return new Organization(name, coordinates, annualTurnover, type, address, "server");
                     } else if (!parts[6].equals("_") && !parts[7].equals("_") && !parts[8].equals("_")) {
                         String streetName = Validator.validateStreetName(parts[5]);
                         float xLocation = Validator.parseXLocation(parts[6]);
@@ -127,13 +127,13 @@ public class CSVProcessor {
                         Location location = new Location(xLocation, yLocation, zLocation);
                         Address address = new Address(streetName, location);
 
-                        output = new Organization(name, coordinates, annualTurnover, type, address, "unknown");
+                        output = new Organization(name, coordinates, annualTurnover, type, address, "server");
                     } else {
                         throw new InvalidDataException("Неверные координаты локации организации: " + line);
                     }
                 } else if (parts[6].equals("_") && parts[7].equals("_") &&
                         parts[8].equals("_") && parts[5].equals("_")) {
-                    output = new Organization(name, coordinates, annualTurnover, type, null, "unknown");
+                    output = new Organization(name, coordinates, annualTurnover, type, null, "server");
                 } else {
                     throw new InvalidDataException("Название улицы не может быть пустым: " + line);
                 }

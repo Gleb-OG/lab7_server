@@ -42,11 +42,13 @@ public class RemoveGreater extends Command {
             compareOrg.setAnnualTurnover(sizeOfAnnualTurnover);
 
             HashSet<Integer> keysToRemove = new HashSet<>();
-            Iterator<Map.Entry<Integer, Organization>> iterator = collectionManager.getCollection().entrySet().iterator();
-            while (iterator.hasNext()) {
-                Map.Entry<Integer, Organization> entry = iterator.next();
-                if (entry.getValue() == null) {continue;}
-                if (entry.getValue().getAnnualTurnover() > compareOrg.getAnnualTurnover()) {
+
+            for (Map.Entry<Integer, Organization> entry : collectionManager.getCollection().entrySet()) {
+                if (entry.getValue() == null) {
+                    continue;
+                }
+                if (entry.getValue().getAnnualTurnover() > compareOrg.getAnnualTurnover()
+                        && collectionManager.checkAccessToOrganization(entry.getKey(), request.getLogin())) {
                     keysToRemove.add(entry.getKey());
                 }
             }
@@ -58,7 +60,7 @@ public class RemoveGreater extends Command {
             }
 
             if (countToRemove == 0) {
-                return ("Нет организаций, у которых годовой оборот больше чем " + sizeOfAnnualTurnoverString);
+                return ("Нет доступных организаций, у которых годовой оборот больше чем " + sizeOfAnnualTurnoverString);
             } else {
                 return ("Удалено " + countToRemove +
                         " организаций с годовым оборотом больше чем " + sizeOfAnnualTurnoverString + ".");
@@ -81,17 +83,21 @@ public class RemoveGreater extends Command {
         Organization compareOrg = new Organization();
         compareOrg.setAnnualTurnover(annualTurnover);
 
-        Iterator<Map.Entry<Integer, Organization>> iterator = collectionManager.getCollection().entrySet().iterator();
+        HashSet<Integer> keysToRemove = new HashSet<>();
 
-        int countToRemove = 0;
+        Iterator<Map.Entry<Integer, Organization>> iterator = collectionManager.getCollection().entrySet().iterator();
         while (iterator.hasNext()) {
             Map.Entry<Integer, Organization> entry = iterator.next();
             if (entry.getValue() == null) {continue;}
             if (entry.getValue().getAnnualTurnover() > compareOrg.getAnnualTurnover()) {
-                iterator.remove();
-                KeyManager.releaseKey(entry.getKey());
-                countToRemove++;
+                keysToRemove.add(entry.getKey());
             }
+        }
+
+        int countToRemove = 0;
+        for (int key : keysToRemove) {
+            collectionManager.removeOrganizationByKey(key);
+            countToRemove++;
         }
 
         if (countToRemove == 0) {

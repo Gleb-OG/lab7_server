@@ -38,7 +38,8 @@ public class UpdateID extends Command {
 
             int key = -1;
             for (int k : collection.keySet()) {
-                if (collection.get(k) != null && collection.get(k).getID() == id) {
+                if (collection.get(k) != null && collection.get(k).getID() == id
+                        && collectionManager.checkAccessToOrganization(k, request.getLogin())) {
                     key = k;
                     break;
                 }
@@ -62,11 +63,12 @@ public class UpdateID extends Command {
 
         int key = -1;
         for (int k : collection.keySet()) {
-            if (collection.get(k) != null && collection.get(k).getID() == id) key = k;
+            if (collection.get(k) != null && collection.get(k).getID() == id &&
+                    collectionManager.checkAccessToOrganization(k, "default")) key = k;
         }
 
         if (key == -1) {
-            return ("В коллекции отсутствует элемент с id " + id + ".");
+            return ("В коллекции отсутствует доступный элемент с id " + id + ".");
         }
 
         Organization newOrganization = CSVProcessor.parseOrganizationFromString(args[1]);

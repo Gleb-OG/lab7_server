@@ -20,8 +20,7 @@ public class Clear extends Command {
         if (collectionManager.getCollection().isEmpty()) {
             return "Коллекция итак пустая.";
         } else {
-            collectionManager.clearCollection();
-            KeyManager.clearAllKeys();
+            collectionManager.clearCollection(request.getLogin());
             return "Коллекция очищена.";
         }
     }

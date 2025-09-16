@@ -48,7 +48,7 @@ public class Organization implements Comparable<Organization>, Serializable {
     public Organization() {
         this.id = IDGenerator.generateID();
         this.creationDate = LocalDate.now();
-        this.username = "system";
+        this.username = null;
     }
 
     public int getID() {
@@ -113,6 +113,7 @@ public class Organization implements Comparable<Organization>, Serializable {
                 "\nannual turnover = " + annualTurnover +
                 "\norganization type = " + type +
                 "\naddress = " + officialAddress +
+                "\nusername = " + username +
                 "\n------------------------------";
     }
 }

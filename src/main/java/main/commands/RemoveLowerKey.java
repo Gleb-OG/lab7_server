@@ -40,7 +40,7 @@ public class RemoveLowerKey extends Command {
             Iterator<Map.Entry<Integer, Organization>> iterator = collectionManager.getCollection().entrySet().iterator();
             while (iterator.hasNext()) {
                 Map.Entry<Integer, Organization> entry = iterator.next();
-                if (entry.getKey() < key) {
+                if (entry.getKey() < key && collectionManager.checkAccessToOrganization(entry.getKey(), request.getLogin())) {
                     keysToRemove.add(entry.getKey());
                 }
             }
@@ -53,7 +53,7 @@ public class RemoveLowerKey extends Command {
 
             if (countToRemove == 0 || values) {
                 if (countToRemove == 0 && !values) {
-                    return ("Нет элементов, у которых ключ меньше " + key + ".");
+                    return ("Нет доступных элементов, у которых ключ меньше " + key + ".");
                 } else return ("Коллекция пуста.");
             } else {
                 return ("Удалено " + countToRemove + " организаций с ключами меньше " + key + ".");
@@ -73,16 +73,19 @@ public class RemoveLowerKey extends Command {
         String input = args[0];
         int key = Integer.parseInt(input);
 
+        HashSet<Integer> keysToRemove = new HashSet<>();
         Iterator<Map.Entry<Integer, Organization>> iterator = collectionManager.getCollection().entrySet().iterator();
-
-        int countToRemove = 0;
         while (iterator.hasNext()) {
             Map.Entry<Integer, Organization> entry = iterator.next();
-            if (entry.getKey() < key) {
-                iterator.remove();
-                KeyManager.releaseKey(entry.getKey());
-                countToRemove++;
+            if (entry.getKey() < key && collectionManager.checkAccessToOrganization(entry.getKey(), "default")) {
+                keysToRemove.add(entry.getKey());
             }
+        }
+
+        int countToRemove = 0;
+        for (int k : keysToRemove) {
+            collectionManager.removeOrganizationByKey(k);
+            countToRemove++;
         }
 
         if (countToRemove == 0 || values) {

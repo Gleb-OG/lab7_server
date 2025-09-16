@@ -20,7 +20,7 @@ public class ExecuteScript extends Command {
         main.Server.scriptMode = true;
         try {
             String filePath = request.getCommandArg();
-            return Server.scriptManager.runScript(filePath);
+            return Server.scriptManager.runScript(filePath, request.getLogin(), request.getPassword());
         } catch (IndexOutOfBoundsException e) {
             return ("Не указано имя файла для выполнения скрипта.");
         } catch (IOException e) {

@@ -22,7 +22,7 @@ public class ScriptManager {
         this.inv = inv;
     }
 
-    public String runScript(String filePath) throws IOException {
+    public String runScript(String filePath, String login, String password) throws IOException {
         try (BufferedReader reader = getBufferedReader(filePath)) {
             String line;
             String strOutput = "";
@@ -52,7 +52,7 @@ public class ScriptManager {
                         continue;
                     }
                     if (tokens.length == 1 || tokens.length == 2 || tokens.length == 3) {
-                        if (tokens.length == 2 && command.check(new Request(tokens[0], tokens[1]))) {
+                        if (tokens.length == 2 && command.check(new Request(tokens[0], tokens[1], login, password))) {
                             strOutput += ("Выполнение команды: " + line + "\n");
                         } else if (tokens.length == 1) {
                             strOutput += ("Выполнение команды: " + line + "\n");
@@ -64,7 +64,7 @@ public class ScriptManager {
                     if (command.getStringArgsAmount() == 1) {
                         strOutput += command.execute(Arrays.copyOfRange(tokens, 1, tokens.length)) + "\n";
                     } else {
-                        strOutput += command.execute(new Request(command.getNameOfCommand())) + "\n";
+                        strOutput += command.execute(new Request(command.getNameOfCommand(), login, password)) + "\n";
                     }
 
                     if (command.getNameOfCommand().equals("exit")) {

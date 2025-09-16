@@ -36,7 +36,7 @@ public class ReplaceIfLower extends Command {
             }
             int key = Validator.validateInt(updatingKey);
 
-            if (KeyManager.checkKeyExisting(key)) {
+            if (KeyManager.checkKeyExisting(key) && collectionManager.checkAccessToOrganization(key, request.getLogin())) {
                 Organization oldOrganization = collectionManager.getCollection().get(key);
                 try {
                     Organization newOrganization = (Organization) request.getCommandObjArg();
@@ -67,7 +67,7 @@ public class ReplaceIfLower extends Command {
         String updatingKey = args[0];
         int key = Integer.parseInt(updatingKey);
 
-        if (KeyManager.checkKeyExisting(key)) {
+        if (KeyManager.checkKeyExisting(key) && collectionManager.checkAccessToOrganization(key, "default")) {
             Organization oldOrganization = collectionManager.getCollection().get(key);
             try {
                 Organization newOrganization = CSVProcessor.parseOrganizationFromString(args[1]);

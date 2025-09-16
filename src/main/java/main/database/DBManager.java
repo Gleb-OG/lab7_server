@@ -1,5 +1,6 @@
 package main.database;
 
+import main.exceptions.InvalidDataException;
 import main.managers.KeyManager;
 import main.model.*;
 
@@ -36,11 +37,9 @@ public class DBManager {
             return true;
         } catch (SQLException e) {
             logger.error("Ошибка при регистрации пользователя: " + e.getMessage());
-            return false;
         }
+        return false;
     }
-//    String hashed = PasswordHashing.md5(plainPassword);
-//    dbManager.registerUser(login, hashed);
 
     public boolean authenticateUser(String username, String passwordMd5) {
         String sql = "SELECT password FROM users WHERE username = ?";
@@ -49,11 +48,16 @@ public class DBManager {
             try (ResultSet rs = pstmt.executeQuery()) {
                 if (rs.next()) {
                     String storedHash = rs.getString("password");
-                    return storedHash.equals(passwordMd5);
+                    if (!storedHash.equals(passwordMd5)) {
+                        throw new InvalidDataException("Неверный логин или пароль.");
+                    }
+                    return true;
                 }
             }
         } catch (SQLException e) {
-            logger.error("Ошибка при аутентификации: " + e.getMessage());
+            logger.error("Ошибка при аутентификации: неверный логин или " + e.getMessage());
+        } catch (InvalidDataException e) {
+            logger.error("Ошибка при аутентификации: " + e);
         }
         return false;
     }
@@ -183,9 +187,10 @@ public class DBManager {
         }
     }
 
-    public void deleteAllOrganizations() {
-        String sql = "DELETE FROM Organizations";
+    public void deleteAllOrganizations(String login) {
+        String sql = "DELETE FROM Organizations WHERE username = ?";
         try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
+            pstmt.setString(1, login);
             pstmt.executeUpdate();
         } catch (SQLException e) {
             logger.error(e);

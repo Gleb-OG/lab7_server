@@ -8,6 +8,8 @@ import main.utils.IDGenerator;
 import java.time.LocalDate;
 import java.util.*;
 
+import static main.Server.collectionManager;
+
 /**
  * Менеджер, управляющий коллекцией: хранит коллекцию, предоставляет доступ
  * к ее редактированию и информации о ней.
@@ -32,10 +34,26 @@ public class CollectionManager {
         this.collection = newcollection;
     }
 
-    public synchronized void clearCollection() {
-        this.collection.clear();
-        dbManager.deleteAllOrganizations();
-        KeyManager.clearAllKeys();
+    public synchronized boolean checkAccessToOrganization(int key, String login) {
+        Organization organization = collection.get(key);
+        return organization != null && organization.getUsername().equals(login);
+    }
+
+    public synchronized void clearCollection(String login) {
+        List<Integer> keysToRemove = new ArrayList<>();
+
+        for (Map.Entry<Integer, Organization> entry : collectionManager.getCollection().entrySet()) {
+            if (entry.getValue() != null && entry.getValue().getUsername().equals(login)) {
+                keysToRemove.add(entry.getKey());
+            }
+        }
+
+        for (int k : keysToRemove) {
+            collectionManager.removeOrganizationByKey(k);
+            KeyManager.releaseKey(k);
+        }
+
+        dbManager.deleteAllOrganizations(login);
     }
 
     public synchronized void addOrganization(Organization organization) throws InvalidDataException {
@@ -94,11 +112,13 @@ public class CollectionManager {
         return null;
     }
 
-    public synchronized void removeOrganizationByKey(int key) throws InvalidDataException {
+    public synchronized void removeOrganizationByKey(int key) {
+        String login = collection.get(key).getUsername();
         collection.remove(key);
         dbManager.deleteOrganization(key);
         KeyManager.releaseKey(key);
     }
+
 
     public synchronized void updateKey(int key, Organization organization) throws InvalidDataException {
         organization.setID(IDGenerator.generateID());

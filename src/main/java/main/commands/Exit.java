@@ -14,6 +14,6 @@ public class Exit extends Command {
 
     @Override
     public String execute(Request request) {
-        return inv.executeServerCommand(new Request("save"));
+        return inv.executeServerCommand(new Request("save", request.getLogin(), request.getPassword()));
     }
 }

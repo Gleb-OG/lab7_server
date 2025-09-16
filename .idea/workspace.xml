@@ -10,34 +10,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14e2157b-7e1c-498a-94b6-7f3aadcb533b" name="Changes" comment="fixed some bags">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/lab6_server_jar2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/database/DBManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/utils/PasswordHashing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+    <list default="true" id="14e2157b-7e1c-498a-94b6-7f3aadcb533b" name="Changes" comment="lab 7, but requires client rebuild and some tests in server part">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/commands/Clear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/commands/Clear.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/commands/ExecuteScript.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/commands/ExecuteScript.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/commands/FilterByAnnualTurnover.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/commands/FilterByAnnualTurnover.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/commands/FilterGreaterThanOfficialAddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/commands/FilterGreaterThanOfficialAddress.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/commands/InsertElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/commands/InsertElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/commands/Exit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/commands/Exit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/commands/RemoveGreater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/commands/RemoveGreater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/commands/RemoveKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/commands/RemoveKey.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/commands/RemoveLowerKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/commands/RemoveLowerKey.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/commands/ReplaceIfLower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/commands/ReplaceIfLower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/commands/Save.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/commands/Save.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/commands/UpdateID.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/commands/UpdateID.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/database/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/database/DBManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/managers/CollectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/managers/CollectionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/model/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/model/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/managers/ScriptManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/managers/ScriptManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/model/Organization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/model/Organization.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/network/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/network/Request.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/utils/CSVProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/utils/CSVProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/utils/IDGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/utils/IDGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/utils/InteractiveParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/utils/InteractiveParser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,7 +54,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/Gleb-OG/lab6_server.git&quot;,
-    &quot;accountId&quot;: &quot;9f26d40a-31e9-43cd-8e64-fea92a3b5960&quot;
+    &quot;accountId&quot;: &quot;1adfdd24-8b5d-42a1-af64-21a1056f34c6&quot;
   }
 }</component>
   <component name="ProblemsViewState">
@@ -78,45 +68,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Client.executor": "Run",
-    "Application.Server.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Maven.client [package].executor": "Run",
-    "Maven.my-project [package].executor": "Run",
-    "Maven.server [package].executor": "Run",
-    "Maven.server [verify].executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "extract.method.default.visibility": "private",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "17",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Глеб/Desktop/lab6_server",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/Глеб/IdeaProjects/lab6_server/src/Main.java",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15039062",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Client.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Server.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Maven.client [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.my-project [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.server [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.server [verify].executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Глеб/Desktop/lab6_server&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Глеб/IdeaProjects/lab6_server/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15039062&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Глеб\IdeaProjects\lab6_server\src" />
@@ -148,7 +138,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Client">
+  <component name="RunManager" selected="Application.Server">
     <configuration name="Client" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="main.Client" />
       <module name="server" />
@@ -185,7 +175,8 @@
       <option name="presentableId" value="Default" />
       <updated>1750091834451</updated>
       <workItem from="1757499350633" duration="314000" />
-      <workItem from="1757673416766" duration="60297000" />
+      <workItem from="1757673416766" duration="77699000" />
+      <workItem from="1757859831221" duration="7296000" />
     </task>
     <task id="LOCAL-00001" summary="-such a mess...&#10;-only started">
       <option name="closed" value="true" />
@@ -259,7 +250,15 @@
       <option name="project" value="LOCAL" />
       <updated>1756533116990</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="lab 7, but requires client rebuild and some tests in server part">
+      <option name="closed" value="true" />
+      <created>1757830441475</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1757830441475</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,6 +283,7 @@
     <MESSAGE value="The first draft of the client part added to the project." />
     <MESSAGE value="finally done" />
     <MESSAGE value="fixed some bags" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed some bags" />
+    <MESSAGE value="lab 7, but requires client rebuild and some tests in server part" />
+    <option name="LAST_COMMIT_MESSAGE" value="lab 7, but requires client rebuild and some tests in server part" />
   </component>
 </project>
